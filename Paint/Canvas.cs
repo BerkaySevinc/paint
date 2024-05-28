@@ -14,7 +14,7 @@ namespace Paint
     public partial class Canvas : Form
     {
 
-        // Initialize Canvas
+        // Initializes canvas.
         Graphics g;
         public Canvas()
         {
@@ -24,13 +24,16 @@ namespace Paint
         }
 
 
-        // Drawing
+        // Gets cursor location when left mouse button is down.
+        Point initialPoint;
         private void Canvas_MouseDown(object sender, MouseEventArgs e)
         {
+            if (e.Button is not MouseButtons.Left) return;
+
             initialPoint = new Point(e.X, e.Y);
         }
 
-        Point initialPoint;
+        // Draws line when mouse is moving if left mouse button is down.
         private void Canvas_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button is not MouseButtons.Left) return;
@@ -40,7 +43,7 @@ namespace Paint
         }
 
 
-        // Color Choice
+        // Sets pen color.
         Pen pen = new(Color.Black, 6);
         private void ColorPalette_Click(object sender, EventArgs e)
         {
@@ -49,33 +52,15 @@ namespace Paint
         }
 
 
-        // Pen Thickness
-        private void Thickness3_Click(object sender, EventArgs e)
-        {
-            pen.Width = 3;
-        }
-
-        private void Thickness6_Click(object sender, EventArgs e)
-        {
-            pen.Width = 6;
-        }
-
-        private void Thickness10_Click(object sender, EventArgs e)
-        {
-            pen.Width = 10;
-        }
-
-        private void Thickness15_Click(object sender, EventArgs e)
-        {
-            pen.Width = 15;
-        }
+        // Sets pen thickness.
+        private void Thickness3_Click(object sender, EventArgs e) => pen.Width = 3;
+        private void Thickness6_Click(object sender, EventArgs e) => pen.Width = 6;
+        private void Thickness10_Click(object sender, EventArgs e) => pen.Width = 10;
+        private void Thickness15_Click(object sender, EventArgs e) => pen.Width = 15;
 
 
-        // Reset Canvas
-        private void Reset_Click(object sender, EventArgs e)
-        {
-            g.Clear(BackColor);
-        }
+        // Resets canvas.
+        private void Reset_Click(object sender, EventArgs e) => g.Clear(BackColor);
 
 
     }
