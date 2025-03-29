@@ -71,7 +71,7 @@ namespace Paint
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1030, 68);
+            panel1.Size = new Size(1016, 68);
             panel1.TabIndex = 0;
             // 
             // label1
@@ -267,6 +267,7 @@ namespace Paint
             Name = "Canvas";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Paint";
+            SizeChanged += Canvas_SizeChanged;
             MouseDown += Canvas_MouseDown;
             MouseMove += Canvas_MouseMove;
             panel1.ResumeLayout(false);
