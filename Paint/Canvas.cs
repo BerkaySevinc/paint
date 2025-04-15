@@ -30,6 +30,9 @@ public partial class Canvas : Form
     {
         if (e.Button is not MouseButtons.Left) return;
 
+        float radius = pen.Width / 2;
+        g.FillEllipse(brush, e.Location.X - radius, e.Location.Y - radius, pen.Width, pen.Width);
+
         initialPoint = new Point(e.X, e.Y);
     }
 
@@ -38,17 +41,24 @@ public partial class Canvas : Form
     {
         if (e.Button is not MouseButtons.Left) return;
 
+        float radius = pen.Width / 2;
+        g.FillEllipse(brush, e.Location.X - radius, e.Location.Y - radius, pen.Width, pen.Width);
+
         g.DrawLine(pen, initialPoint, e.Location);
+
         initialPoint = e.Location;
     }
 
 
     // Sets pen color.
     private Pen pen = new(Color.Black, 6);
+    private Brush brush = new SolidBrush(Color.Black);
     private void ColorPalette_Click(object sender, EventArgs e)
     {
         var selectedPalette = (Panel)sender;
+
         pen.Color = selectedPalette.BackColor;
+        brush = new SolidBrush(selectedPalette.BackColor);
     }
 
 
