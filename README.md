@@ -1,6 +1,6 @@
 # Paint
 
-Simple **Paint** application written in C#.</br>
+Simple **Paint** application base written in C#.</br>
 A minimal drawing program that allows users to draw freely on a canvas using the mouse.
 </br>
 </br>
