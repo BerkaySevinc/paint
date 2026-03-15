@@ -15,4 +15,4 @@ A minimal drawing program that allows users to draw freely on a canvas using the
 </br>
 
 # Medias
-![Video 1](https://github.com/BerkaySevinc/paint/blob/main/Introduction%20Media/Video%201.gif)
+![Video 1](Introduction%20Media/Video%201.gif)
