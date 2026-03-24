@@ -14,5 +14,5 @@ A minimal drawing program that allows users to draw freely on a canvas using the
 - Clear canvas functionality to reset the drawing area.
 </br>
 
-# Medias
+# Media
 ![Video 1](Introduction%20Media/Video%201.gif)
